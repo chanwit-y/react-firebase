@@ -20,7 +20,7 @@ const SignUp = () => {
         }}
         className="white"
       >
-        <h5 className="grey-text text-darken-5">Sign In</h5>
+        <h5 className="grey-text text-darken-5">Sign Up</h5>
         <div className="input-field">
           <label htmlFor="email">Email</label>
           <input
