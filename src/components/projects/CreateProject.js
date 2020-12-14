@@ -10,14 +10,15 @@ const CreateProject = () => {
   });
 
   const dispatch = useDispatch();
-  const firestore = useFirestore();
+  // const firestore = useFirestore();
 
   const handleChange = (e) => {
     setProject((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
   const handleSubmit = () => {
-    dispatch(createProject({ firestore }, project));
+    // dispatch(createProject({ firestore }, project));
+    dispatch(createProject(project));
   };
 
   return (

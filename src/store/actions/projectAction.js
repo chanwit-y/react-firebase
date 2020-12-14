@@ -1,5 +1,5 @@
-export const createProject = ({firestore }, project) => {
-  return (dispatch, getState) => {
+export const createProject = (project) => {
+  return (dispatch, getState, { firebase, firestore }) => {
       firestore.collection('projects').add({
           ...project,
           authorFirstName: 'Beer',

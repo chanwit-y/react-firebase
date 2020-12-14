@@ -8,12 +8,11 @@ import { useEffect } from "react";
 
 const Dashboard = () => {
   useFirestoreConnect("projects");
-  const selectorProjects = useSelector(state => state.firestore.data.projects);
+  const selectorProjects = useSelector(state => state.firestore.ordered.projects);
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    console.log(selectorProjects && Object.values(selectorProjects))
-    setProjects(selectorProjects && Object.values(selectorProjects))
+    setProjects(selectorProjects)
   }, [selectorProjects])
 
   return (

@@ -1,20 +1,27 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useFirebase } from "react-redux-firebase";
+import { signIn } from "../../store/actions/authAction";
 
 const SignIn = () => {
   const [loginInfo, setLoginInfo] = useState({
-      email: '',
-      password: ''
+    email: "",
+    password: "",
   });
+  // const firebase = useFirebase();
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    setLoginInfo(prev => ({...prev, [e.target.id]: e.target.value }));
+    setLoginInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
   return (
     <div className="container">
       <form
-        onSubmit={() => {
-          console.log(loginInfo);
+        onSubmit={(e) => {
+          e.preventDefault();
+          // dispatch(signIn({firebase}, loginInfo))
+          dispatch(signIn(loginInfo))
         }}
         className="white"
       >

@@ -3,6 +3,8 @@ import SignedInLinks from '../layout/SignedInLinks'
 import SignedOutLinks from '../layout/SignedOutLinks'
 
 const Navbar = () => {
+    
+
     return (
         <nav className="nav-wrapper grey darken-3">
             <div className="container">
